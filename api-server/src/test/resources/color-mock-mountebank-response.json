@@ -1,0 +1,72 @@
+{
+  "port": 4545,
+  "protocol": "http",
+  "stubs": [
+    {
+      "responses": [
+        {
+          "is": {
+            "body": {
+              "color": "blue"
+            },
+            "headers": {
+              "Content-Type": "application/json"
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "and": [
+            {
+              "equals": {
+                "path": "/getColor/sky",
+                "method": "GET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "responses": [
+        {
+          "is": {
+            "body": {
+              "color": "yellow"
+            },
+            "headers": {
+              "Content-Type": "application/json"
+            }
+          }
+        }
+      ],
+      "predicates": [
+        {
+          "and": [
+            {
+              "equals": {
+                "path": "/getColor/sun",
+                "method": "GET"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "responses": [
+        {
+          "is": {
+            "body": {
+              "color": "not known"
+            },
+            "headers": {
+              "Content-Type": "application/json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
